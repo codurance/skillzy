@@ -1,0 +1,44 @@
+<h1 class="text-center">{{title}}</h1>
+<div class="btn-group position-relative">
+    <a type="button" href="/craftspeople/new" class="btn btn-primary">Add Craftsperson</a>
+</div>
+
+<table class="table table-striped table-responsive-md">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Skills</th>
+        <th scope="col">On Project</th>
+        <th scope="col">Company/Client</th>
+        <th scope="col">Edit/Remove Craftsperson</th>
+    </tr>
+    </thead>
+    <tbody>
+        {{#each craftspeople as |craftsperson|}}
+            <tr>
+                <th scope="row"><a href={{craftsperson.url}}>{{@index}}</a></th>
+                <td>{{craftsperson.name}}</td>
+                <td>
+                    {{#each craftsperson.skills as |skill|}}
+                        <span class="badge rounded-pill bg-info">{{skill.skillName}}</span>
+                    {{/each}}
+                </td>
+                <td>
+                    {{#if craftsperson.onProject}}
+                        Yes
+                     {{else}}
+                        No
+                    {{/if}}
+                </td>
+                <td>
+                    {{craftsperson.company.companyName}}
+                </td>
+                <td class="btn-group btn-group-sm">
+                    <a href="/craftspeople/{{craftsperson.id}}/edit" class="btn btn-outline-primary">Edit</a>
+                    <button type="button" class="btn btn-outline-danger">Delete</button>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>

@@ -1,0 +1,26 @@
+<h1>{{craftsperson.firstname}} {{craftsperson.lastname}}</h1>
+<div>
+    <h3>Skills</h3>
+    <ul>
+        {{#each craftsperson.skills as |skill|}}
+            <li>{{skill.skillName}}</li>
+        {{/each}}
+    </ul>
+    <h3>On Project</h3>
+    {{#if craftsperson.onProject}}
+        Yes
+    {{else}}
+        Nope
+    {{/if}}
+    <h3>Company/Client</h3>
+    {{#if craftsperson.onProject}}
+        <p>{{craftsperson.company.companyName}}</p>
+    {{else}}
+        <p>Bench</p>
+    {{/if}}
+    <div class="btn-group btn-group-sm">
+        <a type="button" class="btn btn-outline-primary" href="/craftspeople/{{craftsperson.id}}/edit">Edit</a>
+        <button type="button" class="btn btn-outline-danger">Delete</button>
+        <a class="btn btn-outline-primary" href="/craftspeople" role="button">Back</a>
+    </div>
+</div>

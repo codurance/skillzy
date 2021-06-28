@@ -1,0 +1,27 @@
+<h1>{{title}} {{craftsperson.name}}</h1>
+<div class="container">
+    <form method="post" action="{{craftsperson.baseUrl}}/{{craftsperson._id}}/update">
+        <div class="row mb-3">
+            <label for="firstname" class="form-label">First name</label>
+            <input type="text" class="form-control" id="firstname"  name="firstname" aria-describedby="firstnameInput" value={{craftsperson.firstname}}>
+            <div id="firstnameInput" class="form-text">Enter first name.</div>
+        </div>
+        <div class="row mb-3">
+            <label for="lastname" class="form-label">Last name</label>
+            <input type="text" class="form-control" id="lastname" name="lastname" value={{craftsperson.lastname}}>
+        </div>
+        <div class="row mb-3">
+            <label class="form-label" for="skills">Skills</label>
+            <input type="text" class="form-control" id="skills" name="skills" value={{#each craftsperson.skills as |skill|}}{{skill.skillName}}{{/each}}>
+        </div>
+        <div class="row mb-3">
+            <label class="form-label" for="company">Company/Client</label>
+            <input type="text" class="form-control" id="company" name="company" value={{craftsperson.company.companyName}}>
+        </div>
+        <div class="row mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="onProject" name="onProject">
+            <label class="form-check-label" for="onProject">On Project?</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

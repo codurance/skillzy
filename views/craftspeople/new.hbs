@@ -1,0 +1,27 @@
+<h1>{{title}} </h1>
+<div class="container">
+    <form method="post" action="http://localhost:3000/craftspeople">
+        <div class="row mb-3">
+            <label for="firstname" class="form-label">First name</label>
+            <input type="text" class="form-control" id="firstname"  name="firstname" aria-describedby="firstnameInput" placeholder="Ade" required>
+            <div id="firstnameInput" class="form-text">Enter first name.</div>
+        </div>
+        <div class="row mb-3">
+            <label for="lastname" class="form-label">Last name</label>
+            <input type="text" class="form-control" id="lastname" name="lastname"  placeholder="Adeola" required>
+        </div>
+        <div class="row mb-3">
+            <label class="form-label" for="skills">Skills</label>
+            <input type="text" class="form-control" id="skills" name="skills" placeholder="NodeJs Ruby..." required>
+        </div>
+        <div class="row mb-3">
+            <label class="form-label" for="company">Company/Client</label>
+            <input type="text" class="form-control" id="company" name="company" placeholder="Nike" required>
+        </div>
+        <div class="row mb-3">
+            <label class="form-label" for="onProject">On Project?</label>
+            <input type="text" class="form-control" id="onProject" name="onProject" placeholder="true or false" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
